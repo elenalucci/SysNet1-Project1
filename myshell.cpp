@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include <bits/stdc++.h>
 
 using namespace std; 
@@ -16,8 +17,6 @@ int main() {
 	cout << " ------------------------------------------" << endl << endl;
 
 	cout << "$$$: ";
-	bool t = true;
-
 
 	string userInput;
 	cin >> userInput;
@@ -26,6 +25,14 @@ int main() {
 
 	if(userInput == "exit"){
 		exit(0);
+	}
+
+	else if(userInput = '\n'){
+		exit(0);
+	}
+
+	else {
+		cout << "idk if that worked" << endl;
 	}
 
 	
