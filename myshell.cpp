@@ -28,6 +28,12 @@ int main() {
 
 		}
 
+		else {
+
+			break;
+
+		}
+
 	}
 
 }
