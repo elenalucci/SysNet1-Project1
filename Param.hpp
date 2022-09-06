@@ -15,7 +15,7 @@ class Params {
 		char *argumentVector[MAXARGS];
 
 	public:
-
+		Params();
 		void printParams();
 
 };

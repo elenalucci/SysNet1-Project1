@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Params :: printParams() {
+void Params :: printParams() {
 
 	cout << "InputRedirect: [" << (inputRedirect != NULL) ? inputRedirect : "NULL" << "]" << endl << "OutputRedirect: [" << (outputRedirect != NULL) ? outputRedirect : "NULL" << "]" << endl << "Background: [" << background << "]" << endl << "ArgumentCount: [" << argumentCount << "]" << endl;
 
