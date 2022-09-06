@@ -8,8 +8,8 @@ class Params {
 
 	private:
 
-		char *inputRedirect;
-		char *outputRedirect;
+		char *inputRedirect = NULL;
+		char *outputRedirect = NULL;
 		int background;
 		int argumentCount;
 		char *argumentVector[MAXARGS];
