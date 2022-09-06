@@ -16,24 +16,18 @@ int main() {
 	cout << " ------------------------------------------" << endl << endl;
 
 	cout << "$$$: ";
+	bool t = true;
 
-	while(true) {
 
-		string userInput;
-		cin >> userInput;
+	string userInput;
+	cin >> userInput;
 
-		if(userInput == "exit") {
+	cout << userInput;
 
-			break;
-
-		}
-
-		else {
-
-			break;
-
-		}
-
+	if(userInput == "exit"){
+		exit(0);
 	}
+
+	
 
 }
