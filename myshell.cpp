@@ -10,31 +10,33 @@ int main() {
 
 	clear();
 
-	cout << "\n\n\n ------------------------------------------" << endl;
-	cout << " ------------------------------------------" << endl;
-	cout << " --------- Welcome to our shell! ----------" << endl;
-	cout << " ------------------------------------------" << endl;
-	cout << " ------------------------------------------" << endl << endl;
+	cout << "\n\n\n------------------------------------------" << endl;
+	cout << "------------------------------------------" << endl;
+	cout << "--------- Welcome to our shell! ----------" << endl;
+	cout << "------------------------------------------" << endl;
+	cout << "------------------------------------------" << endl << endl << endl << endl;
 
 	cout << "$$$: ";
 
 	string userInput;
-	cin >> userInput;
+	getline(cin, userInput);
 
-	cout << userInput;
+	cout << userInput << endl;
 
-	if(userInput == "exit"){
+	// add while here then probably the fork
+	
+	if(userInput == "exit\n") {
+
 		exit(0);
-	}
-
-	else if(userInput = '\n'){
-		exit(0);
+	
 	}
 
 	else {
-		cout << "idk if that worked" << endl;
+
+		cout << "this is where we need to make things happen" << endl;
+	
 	}
 
-	
+	return 0;
 
 }
