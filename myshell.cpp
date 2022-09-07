@@ -2,11 +2,17 @@
 #include <stdlib.h>
 #include <bits/stdc++.h>
 
+#include "Param.cpp"
+
 using namespace std; 
 
 #define clear() cout << "\033[H\033[J"
 
-int main() {
+int main(int argsc, char** argsv) {
+
+	int DEBUG = 0;
+
+	Params param;
 
 	clear();
 
@@ -18,10 +24,22 @@ int main() {
 
 	cout << "$$$: ";
 
+	if(argsc > 1) {
+
+		if(string(argsv[1]) == "-Debug") {
+
+				DEBUG = 1;
+
+		}
+
+	}
+
 	string userInput;
 	getline(cin, userInput);
 
 	cout << userInput << endl;
+
+	param.printParams();
 
 	// add while here then probably the fork
 	

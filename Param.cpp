@@ -24,6 +24,8 @@ char** Params :: getArguments() {
 
 void Params :: setInputRedirect(char *newInputRedirect) {
 
+//	this->newInputRedirect = newInputRedirect;
+
 }
 
 void Params :: setOutputRedirect(char *newOutputRedirect) {
