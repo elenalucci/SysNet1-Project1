@@ -38,6 +38,8 @@ int main(int argsc, char** argsv) {
 	getline(cin, userInput);
 
 	cout << userInput << endl;
+	
+	//param -> setInputRedirect("input.txt");
 
 	param -> printParams();
 

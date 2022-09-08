@@ -43,19 +43,19 @@ void Params :: setBackground(int newBackground) {
 
 char* Params :: getInputRedirect() {
 
-	return NULL;
+	return inputRedirect;
 
 }
 
 char* Params :: getOutputRedirect() {
 
-	return NULL;
+	return outputRedirect;
 
 }
 
 int Params :: getBackground() {
 
-	return 0;
+	return background;
 
 }
 
