@@ -11,12 +11,15 @@ using namespace std;
 
 #define clear() cout << "\033[H\033[J"
 
+int DEBUG = 0;
+
 int main(int argsc, char** argsv) {
 
-	int DEBUG = 0;
+	//int DEBUG = 0;
 
 	Param* param = new Param();
 	Parse parse;
+	string userInput;
 
 	clear();
 
@@ -38,7 +41,6 @@ int main(int argsc, char** argsv) {
 
 	}
 
-	string userInput;
 	getline(cin, userInput);
 	parse.parseString(userInput);
 	
