@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <bits/stdc++.h>
 
-#include "Param.cpp"
+#include "Param.hpp"
 
 using namespace std; 
 
@@ -12,7 +12,7 @@ int main(int argsc, char** argsv) {
 
 	int DEBUG = 0;
 
-	Params param;
+	Params* param = new Params();
 
 	clear();
 
@@ -39,7 +39,7 @@ int main(int argsc, char** argsv) {
 
 	cout << userInput << endl;
 
-	param.printParams();
+	param -> printParams();
 
 	// add while here then probably the fork
 	

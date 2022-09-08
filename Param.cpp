@@ -5,13 +5,14 @@
 
 using namespace std;
 
-Params::Params(){
+Params :: Params(){
 
 	inputRedirect = outputRedirect = NULL;
 	background = 0;	
 	argumentCount = 0;
 
 }
+
 void Params :: addArgument(char* newArgument) {
 
 }
@@ -24,15 +25,19 @@ char** Params :: getArguments() {
 
 void Params :: setInputRedirect(char *newInputRedirect) {
 
-//	this->newInputRedirect = newInputRedirect;
+	inputRedirect = newInputRedirect;
 
 }
 
 void Params :: setOutputRedirect(char *newOutputRedirect) {
 
+	outputRedirect = newOutputRedirect;
+
 }
 
 void Params :: setBackground(int newBackground) {
+
+	background = newBackground;
 
 }
 
