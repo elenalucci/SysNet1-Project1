@@ -18,7 +18,6 @@ int main(int argsc, char** argsv) {
 	//int DEBUG = 0;
 
 	Param* param = new Param();
-	Parse parse;
 	string userInput;
 
 	clear();
@@ -29,26 +28,23 @@ int main(int argsc, char** argsv) {
 	cout << "------------------------------------------" << endl;
 	cout << "------------------------------------------" << endl << endl << endl << endl;
 
-	cout << "$$$: ";
-
 	if(argsc > 1) {
 
 		if(string(argsv[1]) == "-Debug") {
 
 				DEBUG = 1;
-
+				param -> printParams();
+		
 		}
 
 	}
-
+	cout << "$$$: ";
 	getline(cin, userInput);
-	parse.parseString(userInput);
 	
-	
-	//parse.display();	
-	//cout << userInput << endl;
+	Parse parse(userInput);
+	param = parse.parseString();
 
-	param -> printParams();
+	//param -> printParams();
 
 	// add while here then probably the fork
 	
