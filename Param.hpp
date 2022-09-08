@@ -7,7 +7,7 @@ using namespace std;
 
 #define MAXARGS 32
 
-class Params {
+class Param {
 
 	private:
 
@@ -18,7 +18,7 @@ class Params {
 		char *argumentVector[MAXARGS];
 
 	public:
-		Params();
+		Param();
 		void addArgument(char* newArgument);
 		char** getArguments();
 		void setInputRedirect(char *newInputRedirect);
@@ -28,7 +28,7 @@ class Params {
 		char* getOutputRedirect();
 		int getBackground();
 		void printParams();
-
+		
 };
 
 #endif

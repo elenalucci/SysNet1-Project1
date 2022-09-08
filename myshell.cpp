@@ -12,7 +12,7 @@ int main(int argsc, char** argsv) {
 
 	int DEBUG = 0;
 
-	Params* param = new Params();
+	Param* param = new Param();
 
 	clear();
 
@@ -37,7 +37,7 @@ int main(int argsc, char** argsv) {
 	string userInput;
 	getline(cin, userInput);
 
-	cout << userInput << endl;
+	//cout << userInput << endl;
 
 	param -> printParams();
 
