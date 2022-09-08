@@ -22,7 +22,7 @@ void Parse::parseString(string userInput){
 		cout << token << endl;
 		token = strtok(NULL, " \t\n");
 	}
-
+	delete[] cstr;
 }
 
 void Parse::display(){
