@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Params :: Params(){
+Param :: Param(){
 
 	inputRedirect = outputRedirect = NULL;
 	background = 0;	
@@ -13,53 +13,53 @@ Params :: Params(){
 
 }
 
-void Params :: addArgument(char* newArgument) {
+void Param :: addArgument(char* newArgument) {
 
 }
 
-char** Params :: getArguments() {
+char** Param :: getArguments() {
 
 	return NULL;
 
 }
 
-void Params :: setInputRedirect(char *newInputRedirect) {
+void Param :: setInputRedirect(char *newInputRedirect) {
 
 	inputRedirect = newInputRedirect;
 
 }
 
-void Params :: setOutputRedirect(char *newOutputRedirect) {
+void Param :: setOutputRedirect(char *newOutputRedirect) {
 
 	outputRedirect = newOutputRedirect;
 
 }
 
-void Params :: setBackground(int newBackground) {
+void Param :: setBackground(int newBackground) {
 
 	background = newBackground;
 
 }
 
-char* Params :: getInputRedirect() {
+char* Param :: getInputRedirect() {
 
 	return inputRedirect;
 
 }
 
-char* Params :: getOutputRedirect() {
+char* Param :: getOutputRedirect() {
 
 	return outputRedirect;
 
 }
 
-int Params :: getBackground() {
+int Param :: getBackground() {
 
 	return background;
 
 }
 
-void Params :: printParams() {
+void Param :: printParams() {
 
 	cout << "InputRedirect: [";
 

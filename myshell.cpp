@@ -12,7 +12,7 @@ int main(int argsc, char** argsv) {
 
 	int DEBUG = 0;
 
-	Params* param = new Params();
+	Param* param = new Param();
 
 	clear();
 
@@ -37,9 +37,13 @@ int main(int argsc, char** argsv) {
 	string userInput;
 	getline(cin, userInput);
 
+<<<<<<< HEAD
 	cout << userInput << endl;
 	
 	//param -> setInputRedirect("input.txt");
+=======
+	//cout << userInput << endl;
+>>>>>>> e737c8db74d1421ca2a8edd8d480c9c8d26c63e3
 
 	param -> printParams();
 
