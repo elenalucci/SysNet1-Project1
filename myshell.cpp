@@ -1,8 +1,11 @@
 #include <iostream>
 #include <stdlib.h>
 #include <bits/stdc++.h>
+#include <string>
+#include <cstring>
 
 #include "Param.hpp"
+#include "Parse.hpp"
 
 using namespace std; 
 
@@ -13,6 +16,7 @@ int main(int argsc, char** argsv) {
 	int DEBUG = 0;
 
 	Param* param = new Param();
+	Parse parse;
 
 	clear();
 
@@ -36,7 +40,10 @@ int main(int argsc, char** argsv) {
 
 	string userInput;
 	getline(cin, userInput);
-
+	parse.parseString(userInput);
+	
+	
+	//parse.display();	
 	//cout << userInput << endl;
 
 	param -> printParams();
@@ -51,7 +58,7 @@ int main(int argsc, char** argsv) {
 
 	else {
 
-		cout << "this is where we need to make things happen" << endl;
+		cout<< "this where the magic happens" << endl;
 	
 	}
 
