@@ -15,7 +15,6 @@ class Parse{
 	public:
 		Parse(string userInput);
 		Param * parseString();
-		void display();
 };
 
 #endif

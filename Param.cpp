@@ -7,14 +7,17 @@ using namespace std;
 
 Param :: Param(){
 
-	inputRedirect = outputRedirect = NULL;
+	inputRedirect = NULL;
+	outputRedirect = NULL;
 	background = 0;	
 	argumentCount = 0;
 
 }
 
 void Param :: addArgument(char* newArgument) {
-
+	argumentVector[argumentCount] = newArgument;
+	argumentCount++;
+	
 }
 
 char** Param :: getArguments() {
@@ -55,7 +58,7 @@ char* Param :: getOutputRedirect() {
 
 int Param :: getBackground() {
 
-	return 0;
+	return background;
 
 }
 

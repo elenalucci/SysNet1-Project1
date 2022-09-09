@@ -38,28 +38,29 @@ int main(int argsc, char** argsv) {
 		}
 
 	}
-	cout << "$$$: ";
-	getline(cin, userInput);
+	while(userInput != "exit"){
+		cout << "$$$: ";
+		getline(cin, userInput);
 	
-	Parse parse(userInput);
-	param = parse.parseString();
+		Parse parse(userInput);
+		param = parse.parseString();
 
-	//param -> printParams();
+		//param -> printParams();
 
-	// add while here then probably the fork
+		// add while here then probably the fork
 	
-	if(userInput == "exit\n") {
+		if(userInput == "exit\n") {
 
-		exit(0);
+			exit(0);
 	
+		}
+
+		else {
+
+			cout<< "this where the magic happens" << endl;
+	
+		}
 	}
-
-	else {
-
-		cout<< "this where the magic happens" << endl;
-	
-	}
-
 	return 0;
 
 }
