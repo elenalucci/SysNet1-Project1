@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Param.hpp"
 
 #ifndef PARSE_HPP
 #define PARSE_HPP
@@ -10,15 +11,10 @@ class Parse{
 	private:
 		string input;
 		char * token;
-		
 
 	public:
-		Parse();
-		void setInput(string userInput);
-		string getInput();
-		//make into a char *
-		void parseString(string userInput);
-		void display();
+		Parse(string userInput);
+		Param * parseString();
 };
 
 #endif

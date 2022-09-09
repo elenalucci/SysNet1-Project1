@@ -11,12 +11,14 @@ using namespace std;
 
 #define clear() cout << "\033[H\033[J"
 
+int DEBUG = 0;
+
 int main(int argsc, char** argsv) {
 
-	int DEBUG = 0;
+	//int DEBUG = 0;
 
 	Param* param = new Param();
-	Parse parse;
+	string userInput;
 
 	clear();
 
@@ -26,17 +28,17 @@ int main(int argsc, char** argsv) {
 	cout << "------------------------------------------" << endl;
 	cout << "------------------------------------------" << endl << endl << endl << endl;
 
-	cout << "$$$: ";
-
 	if(argsc > 1) {
 
 		if(string(argsv[1]) == "-Debug") {
 
 				DEBUG = 1;
-
+				param -> printParams();
+		
 		}
 
 	}
+<<<<<<< HEAD
 
 	string userInput;
 	getline(cin, userInput);
@@ -53,21 +55,31 @@ int main(int argsc, char** argsv) {
 	//cout << userInput << endl;
 	
 	param -> printParams();
-
-	// add while here then probably the fork
+=======
+	while(userInput != "exit"){
+		cout << "$$$: ";
+		getline(cin, userInput);
 	
-	if(userInput == "exit\n") {
+		Parse parse(userInput);
+		param = parse.parseString();
 
-		exit(0);
+		//param -> printParams();
+>>>>>>> 719b611033967cf44646fcee763b550f656d70d2
+
+		// add while here then probably the fork
 	
+		if(userInput == "exit\n") {
+
+			exit(0);
+	
+		}
+
+		else {
+
+			cout<< "this where the magic happens" << endl;
+	
+		}
 	}
-
-	else {
-
-		cout<< "this where the magic happens" << endl;
-	
-	}
-
 	return 0;
 
 }

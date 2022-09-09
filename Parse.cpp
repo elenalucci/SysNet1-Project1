@@ -1,31 +1,38 @@
 #include "Parse.hpp"
 #include <cstring>
-Parse::Parse(){
-	input = "";
+Parse::Parse(string userInput){
+	input = userInput;
 }
 
-void Parse::setInput(string userInput){
+Param * Parse::parseString(){
+	Param * param = new Param();
+		
+	char * cstr = new char[input.length()+1];
+	strcpy(cstr, input.c_str());
 
-		input = userInput;
-}
-
-string Parse::getInput(){
-	return input;
-}
-
-void Parse::parseString(string userInput){
-	char * cstr = new char[userInput.length()+1];
-	strcpy(cstr, userInput.c_str());
-	
 	token = strtok(cstr," \t\n");
 	while(token != 0){
 		cout << token << endl;
+
+		if(token[0] == '<'){
+			param->setInputRedirect(token);
+			//cout << param->getInputRedirect() << endl;
+		}
+		else if(token[0] == '>'){
+			param->setOutputRedirect(token);
+			//cout << param->getOutputRedirect() << endl;
+		}
+		/*else if(token == "&"&& is the last token){
+		}*/
+
+		else{
+			param->addArgument(token);
+		}
 		token = strtok(NULL, " \t\n");
 	}
 
+
+	return param;
 }
 
-void Parse::display(){
-	cout << input << endl;
-}
 
