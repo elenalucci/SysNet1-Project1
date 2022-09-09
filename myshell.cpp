@@ -1,8 +1,11 @@
 #include <iostream>
 #include <stdlib.h>
 #include <bits/stdc++.h>
+#include <string>
+#include <cstring>
 
 #include "Param.hpp"
+#include "Parse.hpp"
 
 using namespace std; 
 
@@ -13,6 +16,7 @@ int main(int argsc, char** argsv) {
 	int DEBUG = 0;
 
 	Param* param = new Param();
+	Parse parse;
 
 	clear();
 
@@ -37,14 +41,17 @@ int main(int argsc, char** argsv) {
 	string userInput;
 	getline(cin, userInput);
 
-<<<<<<< HEAD
 	cout << userInput << endl;
 	
 	//param -> setInputRedirect("input.txt");
-=======
-	//cout << userInput << endl;
->>>>>>> e737c8db74d1421ca2a8edd8d480c9c8d26c63e3
+	
+	parse.parseString(userInput);
+	
+	
+	//parse.display();	
 
+	//cout << userInput << endl;
+	
 	param -> printParams();
 
 	// add while here then probably the fork
@@ -57,7 +64,7 @@ int main(int argsc, char** argsv) {
 
 	else {
 
-		cout << "this is where we need to make things happen" << endl;
+		cout<< "this where the magic happens" << endl;
 	
 	}
 
