@@ -16,15 +16,16 @@ Param * Parse::parseString(){
 
 		if(token[0] == '<'){
 			param->setInputRedirect(token);
-			//cout << param->getInputRedirect() << endl;
+			cout << param->getInputRedirect() << endl;
 		}
 		else if(token[0] == '>'){
 			param->setOutputRedirect(token);
-			//cout << param->getOutputRedirect() << endl;
+			cout << param->getOutputRedirect() << endl;
 		}
-		/*else if(token == "&"&& is the last token){
-		}*/
-
+		else if(token[0] == '\n'){
+			token[0] == '\0';
+			param->setBackground(1);
+		}
 		else{
 			param->addArgument(token);
 		}
