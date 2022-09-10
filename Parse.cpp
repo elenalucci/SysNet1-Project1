@@ -1,6 +1,7 @@
 //Elena Lucci and Tia Sharpe
 #include "Parse.hpp"
 #include <cstring>
+#include <algorithm>
 //parameterized constructor
 Parse::Parse(string userInput){
 	input = userInput;
@@ -20,13 +21,24 @@ Param * Parse::parseString(){
 
 		//sets input redirect name
 		if(token[0] == '<'){
+			
+			int count = 1;
+			char * tokenCopy = new char;
+			
+			while(token[count] != '\0'){
+				tokenCopy += token[count];
+				cout << tokenCopy << endl;
+				count++;
+			}
+			//token = tokenCopy;
+
 			param->setInputRedirect(token);
-			//	cout << param->getInputRedirect() << endl;
+			//cout << param->getInputRedirect() << endl;
 		}
 		//sets ouput redirect name
 		else if(token[0] == '>'){
 			param->setOutputRedirect(token);
-			//	cout << param->getOutputRedirect() << endl;
+			//cout << param->getOutputRedirect() << endl;
 		}
 		//NOT FINISHED: does not accept tokens of only '&' if there is one in the middle of the string and the end
 		else if(token[0] == '&' && input[input.length()-1] == '&'){
