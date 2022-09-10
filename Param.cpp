@@ -67,31 +67,25 @@ void Param :: printParams() {
 	cout << "InputRedirect: [";
 
 	if (inputRedirect != NULL) {
-
 		cout << inputRedirect; 
-	
 	}
-	
 	else {
-
 		cout << "NULL"; 
-		cout << "]" << endl << "OutputRedirect: [";
-
 	}
 
-	if (outputRedirect != NULL) {
-		
+	cout << "]" << endl << "OutputRedirect: [";
+
+	if (outputRedirect != NULL) {	
 		cout << outputRedirect;
-
 	}
-
 	else {
+		cout<< "NULL";
+	}
+	
+	cout << "]" << endl;
+	cout << "Background: [" << background << "]" << endl << "ArgumentCount: [" << argumentCount << "]" << endl;
 
-		cout<< "NULL" << "]" << endl;
-    		cout << "Background: [" << background << "]" << endl 
-			<< "ArgumentCount: [" << argumentCount << "]" << endl;
-
-    	}
+    	
 
 	for(int i = 0; i < argumentCount; i++) {
 
