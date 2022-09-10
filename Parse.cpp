@@ -21,17 +21,16 @@ Param * Parse::parseString(){
 
 		//sets input redirect name
 		if(token[0] == '<'){
-			
+			/*
 			int count = 1;
 			char * tokenCopy = new char;
-			
 			while(token[count] != '\0'){
 				tokenCopy += token[count];
 				cout << tokenCopy << endl;
 				count++;
 			}
-			//token = tokenCopy;
-
+			token = tokenCopy;
+			*/
 			param->setInputRedirect(token);
 			//cout << param->getInputRedirect() << endl;
 		}
