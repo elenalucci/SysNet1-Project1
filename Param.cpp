@@ -1,3 +1,4 @@
+//Tia Sharpe and Elena Lucci
 #include <iostream>
 #include <string>
 
@@ -13,7 +14,7 @@ Param :: Param(){
 	argumentCount = 0;
 
 }
-
+//adds parsed toked to argument vector
 void Param :: addArgument(char* newArgument) {
 	argumentVector[argumentCount] = newArgument;
 	argumentCount++;
@@ -61,7 +62,7 @@ int Param :: getBackground() {
 	return background;
 
 }
-
+//prints out the param object vaules
 void Param :: printParams() {
 
 	cout << "InputRedirect: [";

@@ -21,21 +21,39 @@ Param * Parse::parseString(){
 
 		//sets input redirect name
 		if(token[0] == '<'){
-			/*
-			int count = 1;
-			char * tokenCopy = new char;
+			
+			string newToken;
+			int count = 1;	
+
 			while(token[count] != '\0'){
-				tokenCopy += token[count];
-				cout << tokenCopy << endl;
+				newToken += token[count];
+				//cout << newToken << endl;
 				count++;
 			}
-			token = tokenCopy;
-			*/
+			
+			
+
+					
 			param->setInputRedirect(token);
 			//cout << param->getInputRedirect() << endl;
 		}
 		//sets ouput redirect name
 		else if(token[0] == '>'){
+			
+			/*string newToken;
+			int count = 1;
+			char * token2;
+
+			while(token[count] != '\0'){
+				newToken += token[count];
+				//cout << newToken << endl;
+				count++;
+			}
+
+			char* tokenCopy = new char[newToken.length() +1];
+			strcpy(tokenCopy,newToken.c_str());
+			token2 = strtok(tokenCopy," \t\n");
+			*/
 			param->setOutputRedirect(token);
 			//cout << param->getOutputRedirect() << endl;
 		}
