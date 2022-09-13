@@ -31,18 +31,14 @@ Param * Parse::parseString(){
 				count++;
 			}
 			
-			
-
-					
+			strcpy(token, newToken.c_str());
 			param->setInputRedirect(token);
-			//cout << param->getInputRedirect() << endl;
 		}
 		//sets ouput redirect name
 		else if(token[0] == '>'){
 			
-			/*string newToken;
+			string newToken;
 			int count = 1;
-			char * token2;
 
 			while(token[count] != '\0'){
 				newToken += token[count];
@@ -50,10 +46,7 @@ Param * Parse::parseString(){
 				count++;
 			}
 
-			char* tokenCopy = new char[newToken.length() +1];
-			strcpy(tokenCopy,newToken.c_str());
-			token2 = strtok(tokenCopy," \t\n");
-			*/
+			strcpy(token, newToken.c_str());
 			param->setOutputRedirect(token);
 			//cout << param->getOutputRedirect() << endl;
 		}
