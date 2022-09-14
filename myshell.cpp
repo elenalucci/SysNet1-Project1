@@ -59,6 +59,8 @@ int main(int argsc, char** argsv) {
 		//part 2
 		else {
 
+			//param -> printParams();
+
 			pid_t pid = fork();
 
 			if(pid < 0) { 
@@ -70,7 +72,7 @@ int main(int argsc, char** argsv) {
 
 			else if(pid == 0) {
 	
-				execv("./exit", NULL);
+				//execv("./slow", NULL);
 				cout << "---------Child proccess" << endl << endl;
 
 			}
