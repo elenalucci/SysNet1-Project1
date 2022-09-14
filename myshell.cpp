@@ -52,7 +52,7 @@ int main(int argsc, char** argsv) {
 
 		else {
 
-			cout<< "this where the magic happens" << endl;
+			cout<< "this where the forkin magic happens" << endl;
 			param -> printParams();
 		}
 	
