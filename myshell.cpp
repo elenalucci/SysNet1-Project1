@@ -1,3 +1,4 @@
+//Tia Sharpe and Elena Lucci
 #include <iostream>
 #include <stdlib.h>
 #include <bits/stdc++.h>
@@ -9,6 +10,7 @@
 
 using namespace std; 
 
+//makes the shell appear at the top of the screen
 #define clear() cout << "\033[H\033[J"
 
 int DEBUG = 0;
@@ -36,7 +38,7 @@ int main(int argsc, char** argsv) {
 		}
 
 	}
-
+	//loops through the shell process of accepting a user input and parsing it. Creates new param object every time
 	while(userInput != "exit"){
 		cout << "$$$: ";
 		getline(cin, userInput);
@@ -49,7 +51,7 @@ int main(int argsc, char** argsv) {
 			exit(0);
 	
 		}
-
+		//part 2
 		else {
 
 			cout<< "this where the forkin magic happens" << endl;

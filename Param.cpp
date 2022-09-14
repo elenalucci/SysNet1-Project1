@@ -1,3 +1,4 @@
+//Tia Sharpe and Elena Lucci
 #include <iostream>
 #include <string>
 
@@ -13,7 +14,7 @@ Param :: Param(){
 	argumentCount = 0;
 
 }
-
+//adds parsed toked to argument vector
 void Param :: addArgument(char* newArgument) {
 	argumentVector[argumentCount] = newArgument;
 	argumentCount++;
@@ -61,37 +62,31 @@ int Param :: getBackground() {
 	return background;
 
 }
-
+//prints out the param object vaules
 void Param :: printParams() {
 
 	cout << "InputRedirect: [";
 
 	if (inputRedirect != NULL) {
-
 		cout << inputRedirect; 
-	
 	}
-	
 	else {
-
 		cout << "NULL"; 
-		cout << "]" << endl << "OutputRedirect: [";
-
 	}
 
-	if (outputRedirect != NULL) {
-		
+	cout << "]" << endl << "OutputRedirect: [";
+
+	if (outputRedirect != NULL) {	
 		cout << outputRedirect;
-
 	}
-
 	else {
+		cout<< "NULL";
+	}
+	
+	cout << "]" << endl;
+	cout << "Background: [" << background << "]" << endl << "ArgumentCount: [" << argumentCount << "]" << endl;
 
-		cout<< "NULL" << "]" << endl;
-    		cout << "Background: [" << background << "]" << endl 
-			<< "ArgumentCount: [" << argumentCount << "]" << endl;
-
-    	}
+    	
 
 	for(int i = 0; i < argumentCount; i++) {
 
