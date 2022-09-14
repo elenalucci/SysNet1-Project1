@@ -50,6 +50,8 @@ int main(int argsc, char** argsv) {
 		Parse parse(userInput);
 		param = parse.parseString();
 
+		param -> printParams();
+
 		if(userInput == "exit\n") {
 
 			exit(0);
@@ -58,8 +60,6 @@ int main(int argsc, char** argsv) {
 		
 		//part 2
 		else {
-
-			//param -> printParams();
 
 			pid_t pid = fork();
 
@@ -84,9 +84,9 @@ int main(int argsc, char** argsv) {
 
 			//cout<< "this where the forkin magic happens" << endl;
 			
-		}
+			}
 	
-	}
+		}
 
 	}
 	return 0;
