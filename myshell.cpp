@@ -72,7 +72,7 @@ int main(int argsc, char** argsv) {
 
 			else if(pid == 0) {
 	
-				execvp(param->getArguments(), argsv);
+				execvp("./slow", argsv);
 				cout << "---------Child proccess" << endl << endl;
 
 			}
