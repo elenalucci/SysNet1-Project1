@@ -23,7 +23,7 @@ void Param :: addArgument(char* newArgument) {
 
 char** Param :: getArguments() {
 
-	return NULL;
+	return argumentVector;
 
 }
 
