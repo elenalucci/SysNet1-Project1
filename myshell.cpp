@@ -51,44 +51,36 @@ int main(int argsc, char** argsv) {
 		param = parse.parseString();
 
 		param -> printParams();
-
-		if(userInput == "exit\n") {
-
-			exit(0);
-	
-		}
 		
 		//part 2
+
+		pid_t pid = fork();
+
+		if(pid < 0) { 
+			
+			cout << "Fork failed" << endl;
+			return 1;
+			
+		}
+
+		else if(pid == 0) {
+			execvp ( param->getArguments()[0], param->getArguments());
+			cout <<"---------Child proccess" << endl << endl;
+
+		}
+			
 		else {
 
-			pid_t pid = fork();
-
-			if(pid < 0) { 
-			
-				cout << "Fork failed" << endl;
-				return 1;
-			
-			}
-
-			else if(pid == 0) {
-	
-				execvp("./slow", argsv);
-				cout << "---------Child proccess" << endl << endl;
-
-			}
-			
-			else {
-
-				wait(NULL);
-				cout << "---------Child procces finished" << endl << endl;
+			wait(NULL);
+			cout << "---------Child procces finished" << endl << endl;
 
 			//cout<< "this where the forkin magic happens" << endl;
 			
-			}
-	
 		}
-
+	
 	}
+
+	
 	return 0;
 
 }

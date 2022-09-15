@@ -3,7 +3,7 @@ CXXFLAGS = -g -std=c++11 -Wall
 
 OBJECTS = myshell.cpp Param.cpp Parse.cpp
 
-test: ${OBJECTS}
+myshell: ${OBJECTS}
 	${CXX} ${CXXFLAGS} -o $@ ${OBJECTS}
 
 clean:
