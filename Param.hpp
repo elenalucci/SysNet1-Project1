@@ -20,7 +20,7 @@ class Param {
 		//number of elements in the argument vector
 		int argumentCount;
 		//array that holds parsed tokens
-		char *argumentVector[MAXARGS];
+		char * argumentVector[MAXARGS];
 
 	public:
 		//default constructor
