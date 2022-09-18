@@ -73,7 +73,7 @@ int main(int argsc, char** argsv) {
 			
 		else {
 
-			pid = waitpid(cpid, &status, WNOHANG);
+			waitpid(cpid, &status, WNOHANG);
 
 		}
 	
