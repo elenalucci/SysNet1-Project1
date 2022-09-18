@@ -56,6 +56,9 @@ int main(int argsc, char** argsv) {
 
 		pid_t pid = fork();
 
+		int status;
+		int cpid;
+
 		if(pid < 0) { 
 			
 			cout << "Fork failed" << endl;
@@ -65,17 +68,13 @@ int main(int argsc, char** argsv) {
 
 		else if(pid == 0) {
 			execvp ( param->getArguments()[0], param->getArguments());
-			cout <<"---------Child proccess" << endl << endl;
 
 		}
 			
 		else {
 
-			wait(NULL);
-			cout << "---------Child procces finished" << endl << endl;
+			pid = waitpid(cpid, &status, WNOHANG);
 
-			//cout<< "this where the forkin magic happens" << endl;
-			
 		}
 	
 	}

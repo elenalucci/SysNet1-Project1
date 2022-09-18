@@ -1,0 +1,12 @@
+total 372
+-rw-r--r--. 1 tjs78 domain users      0 Sep 18 15:44 file.txt
+-rw-r--r--. 1 tjs78 domain users    159 Sep 18 15:42 Makefile
+-rwxr-xr-x. 1 tjs78 domain users 149344 Sep 18 15:42 myshell
+-rw-r--r--. 1 tjs78 domain users   1653 Sep 18 15:42 myshell.cpp
+-rw-r--r--. 1 tjs78 domain users   1497 Sep 18 15:42 Param.cpp
+-rw-r--r--. 1 tjs78 domain users    889 Sep 18 15:42 Param.hpp
+-rw-r--r--. 1 tjs78 domain users   1599 Sep 14 15:04 Parse.cpp
+-rw-r--r--. 1 tjs78 domain users    407 Sep 14 15:04 Parse.hpp
+-rw-r--r--. 1 tjs78 domain users  45829 Sep 14 15:04 Project 1 Midpoint Report.pdf
+-rw-r--r--. 1 tjs78 domain users     18 Sep  6 14:24 README.md
+-rwxr-xr-x. 1 tjs78 domain users 149344 Sep 18 15:42 test
