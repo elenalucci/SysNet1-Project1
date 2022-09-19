@@ -3,7 +3,9 @@
 This program creates a basic shell that parses user input, creates new processes to execute specific programs, and performs input/output redirection and background execution.
 
 To run the program:
+
   - type into the console "make myshell"
+  - 
   - after typing "make myshell," to execute the file type "./myshell"
 
 
