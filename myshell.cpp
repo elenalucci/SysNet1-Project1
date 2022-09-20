@@ -55,6 +55,8 @@ int main(int argsc, char** argsv) {
 	cout << "$$$: ";
 	getline(cin, userInput);
 	
+	int countKids = 0;
+
 	while(userInput != "exit"){
 	
 		Parse parse(userInput);
@@ -66,9 +68,14 @@ int main(int argsc, char** argsv) {
 
 		pid_t pid = fork();
 
+		cout << "incr" << endl;
+		
+		countKids++;
+
+		cout << countKids << endl;
 		if(pid < 0) { 
 			
-			cout << stderr <<"Fork failed" << endl;
+			cout << stderr << "Fork failed" << endl;
 			return 1;
 			
 		}
@@ -79,18 +86,27 @@ int main(int argsc, char** argsv) {
 			
 				cout << "ERROR: COMMAND NOT RECOGNIZED" << endl;
 
+				cout << "decr 1" << endl;
+				countKids--;
+
 				exit(1);
 			
 			}
 
-			wait(NULL);
-			
+		cout << "dec1" << endl;
+		countKids--;
+		cout << countKids << endl;
+
 		}
-			
-		else {
+		
+		if(param->getBackground() == 0) {
 
 			wait(NULL);
 
+			cout << "decr" << endl;
+			countKids--;
+
+			cout << countKids << endl;
 		}
 
 	cout << endl;
@@ -99,6 +115,7 @@ int main(int argsc, char** argsv) {
 
 	}
 
+	
 	return 0;
 
 }
