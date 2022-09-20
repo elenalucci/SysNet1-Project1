@@ -94,5 +94,7 @@ void Param :: printParams() {
 
 	}
 
+	cout << endl;
+
 }
 

@@ -43,11 +43,14 @@ int main(int argsc, char** argsv) {
 
 	}
 	//loops through the shell process of accepting a user input and parsing it. Creates new param object every time
+
+	cout << "$$$: ";
+	getline(cin, userInput);
+	
 	while(userInput != "exit"){
-		cout << "$$$: ";
-		getline(cin, userInput);
 	
 		Parse parse(userInput);
+		cout << userInput << endl;
 		param = parse.parseString();
 
 		param -> printParams();
@@ -55,9 +58,6 @@ int main(int argsc, char** argsv) {
 		//part 2
 
 		pid_t pid = fork();
-
-		int status;
-		int cpid;
 
 		if(pid < 0) { 
 			
@@ -67,19 +67,22 @@ int main(int argsc, char** argsv) {
 		}
 
 		else if(pid == 0) {
-			execvp ( param->getArguments()[0], param->getArguments());
-
+		
+			execvp(param->getArguments()[0], param->getArguments());
+			
 		}
 			
 		else {
 
-			waitpid(cpid, &status, WNOHANG);
+			wait(NULL);
 
 		}
-	
+
+	getline(cin, userInput);
+	cout << "$$$: ";
+
 	}
 
-	
 	return 0;
 
 }

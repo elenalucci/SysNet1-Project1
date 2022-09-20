@@ -50,7 +50,7 @@ Param * Parse::parseString(){
 			param->setOutputRedirect(token);
 			//cout << param->getOutputRedirect() << endl;
 		}
-		//NOT FINISHED: does not accept tokens of only '&' if there is one in the middle of the string and the end
+		
 		else if(token[0] == '&' && input[input.length()-1] == '&'){
 			//	cout << token << endl;
 			param->setBackground(1);
