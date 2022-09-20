@@ -69,6 +69,7 @@ int main(int argsc, char** argsv) {
 		else if(pid == 0) {
 		
 			execvp(param->getArguments()[0], param->getArguments());
+			wait(NULL);
 			
 		}
 			
@@ -78,8 +79,9 @@ int main(int argsc, char** argsv) {
 
 		}
 
-	getline(cin, userInput);
+	cout << endl;
 	cout << "$$$: ";
+	getline(cin, userInput);
 
 	}
 
