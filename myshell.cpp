@@ -19,6 +19,14 @@ using namespace std;
 
 int DEBUG = 0;
 
+/**
+ *
+ * Handles user input and forking
+ *
+ * @return the error code;
+ *
+ */
+
 int main(int argsc, char** argsv) {
 
 	Param* param = new Param();

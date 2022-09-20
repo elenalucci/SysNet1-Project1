@@ -8,6 +8,15 @@ using namespace std;
 
 #define MAXARGS 32
 
+/**
+ * This program sets up the string for parsing
+ *
+ * @author Elena Lucci & Tia Sharpe
+ * @date September 20, 2022
+ * @info COP 4634
+ *
+ */
+
 class Param {
 
 	private:

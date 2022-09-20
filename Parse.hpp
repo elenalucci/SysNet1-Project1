@@ -7,10 +7,21 @@
 
 using namespace std;
 
+/**
+ *
+ *
+ * This class parses through the user input
+ *
+ * @author Elena Lucca & Tia Sharpe
+ * @date September 10, 2022
+ * @info COP 4634 
+ *
+ */
+
 class Parse{
 
 	private:
-		//user inputted string
+		//string input
 		string input;
 		//token object
 		char * token;
