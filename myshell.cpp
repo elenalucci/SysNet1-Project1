@@ -50,7 +50,6 @@ int main(int argsc, char** argsv) {
 	while(userInput != "exit"){
 	
 		Parse parse(userInput);
-		cout << userInput << endl;
 		param = parse.parseString();
 
 		param -> printParams();
@@ -61,14 +60,21 @@ int main(int argsc, char** argsv) {
 
 		if(pid < 0) { 
 			
-			cout << "Fork failed" << endl;
+			cout << stderr <<"Fork failed" << endl;
 			return 1;
 			
 		}
 
 		else if(pid == 0) {
-		
-			execvp(param->getArguments()[0], param->getArguments());
+
+			if(execvp(param->getArguments()[0], param->getArguments()) == -1) {
+			
+				cout << "ERROR: COMMAND NOT RECOGNIZED" << endl;
+
+				exit(1);
+			
+			}
+
 			wait(NULL);
 			
 		}

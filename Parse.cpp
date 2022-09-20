@@ -17,7 +17,6 @@ Param * Parse::parseString(){
 	token = strtok(cstr," \t\n");
 	//while token is a length bigger than 0, parse	
 	while(token != 0){
-		cout << token << endl;
 
 		//sets input redirect name
 		if(token[0] == '<'){
@@ -27,7 +26,6 @@ Param * Parse::parseString(){
 
 			while(token[count] != '\0'){
 				newToken += token[count];
-				//cout << newToken << endl;
 				count++;
 			}
 			
@@ -42,17 +40,14 @@ Param * Parse::parseString(){
 
 			while(token[count] != '\0'){
 				newToken += token[count];
-				//cout << newToken << endl;
 				count++;
 			}
 
 			strcpy(token, newToken.c_str());
 			param->setOutputRedirect(token);
-			//cout << param->getOutputRedirect() << endl;
 		}
 		
-		else if(token[0] == '&' && input[input.length()-1] == '&'){
-			//	cout << token << endl;
+		else if(token[0] == '&' && input[input.length()-1] == '&') {
 			param->setBackground(1);
 		}
 		//all other tokens are added to argument vector
