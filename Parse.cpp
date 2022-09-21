@@ -6,6 +6,7 @@
 Parse::Parse(string userInput){
 	input = userInput;
 }
+
 //function that parses the string into tokens, and adds the tokens into the correct param field, returns param object
 Param * Parse::parseString(){
 	//creates new param object per string	

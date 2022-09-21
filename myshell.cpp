@@ -79,8 +79,7 @@ int main(int argsc, char** argsv) {
 
 		else if(pid == 0) {
 			kidsCount++;
-			cout << "Kids remaining: " << kidsCount << endl;
-			
+						
 			if(execvp(param->getArguments()[0], param->getArguments()) == -1) {
 			
 				cout << "ERROR: COMMAND NOT RECOGNIZED" << endl;
@@ -96,15 +95,15 @@ int main(int argsc, char** argsv) {
 			wait(NULL);
 		
 		}
-	cout << "Kids remaining: " << kidsCount << endl;
 
 	cout << endl;
 	cout << "$$$: ";
 	getline(cin, userInput);
 
+	delete param;
 	}
 
-	cout << "Kids remaining: " << kidsCount << endl;
+//	delete param;
 	
 	while((wpid = wait(&status)) >0);
 	
