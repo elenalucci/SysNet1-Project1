@@ -21,6 +21,10 @@ void Param :: addArgument(char* newArgument) {
 	
 }
 
+int Param:: getArgumentCount(){
+	return argumentCount;
+}
+
 char** Param :: getArguments() {
 
 	return argumentVector;

@@ -44,27 +44,33 @@ int main(int argsc, char** argsv) {
 
 		if(string(argsv[1]) == "-Debug") {
 
-				DEBUG = 1;
-				param -> printParams();
-		
+			DEBUG = 1;
+			param -> printParams();	
 		}
-
 	}
 	//loops through the shell process of accepting a user input and parsing it. Creates new param object every time
 
-	cout << "$$$: ";
-	getline(cin, userInput);
-	
-	int kidsCount = 0;
 	pid_t wpid;
 	int status = 0;
 
-	while(userInput != "exit"){
-	
-		Parse parse(userInput);
-		param = parse.parseString();
+	while(userInput != "exit"){	
+		
+		cout << endl; 
+		cout << "$$$: ";
 
-		param -> printParams();
+		getline(cin, userInput);
+
+		if(userInput == "exit") {
+		
+			break;
+
+		}
+
+		char * cstr = new char[userInput.length()+1];
+   	        strcpy(cstr, userInput.c_str());
+		
+		Parse parse;
+		param = parse.parseString(cstr);
 		
 		//part 2
 
@@ -78,34 +84,42 @@ int main(int argsc, char** argsv) {
 		}
 
 		else if(pid == 0) {
-			kidsCount++;
-						
+
+			if(param->getInputRedirect() != NULL ) {
+			
+				freopen(param->getInputRedirect(), "r", stdin);
+
+			}
+
+			if(param->getOutputRedirect() != NULL) {
+
+				freopen(param->getOutputRedirect(), "w", stdout);
+
+			}
+
 			if(execvp(param->getArguments()[0], param->getArguments()) == -1) {
 			
 				cout << "ERROR: COMMAND NOT RECOGNIZED" << endl;
 				exit(1);
 			
 			}
-			kidsCount--;		
 		
 		}
-		
+
 		if(param->getBackground() == 0) {
 
 			wait(NULL);
 		
 		}
 
-	cout << endl;
-	cout << "$$$: ";
-	getline(cin, userInput);
+		delete cstr;
+		delete param;
 
-	delete param;
 	}
-
-//	delete param;
 	
 	while((wpid = wait(&status)) >0);
+	
+	//delete param;
 	
 	return 0;
 

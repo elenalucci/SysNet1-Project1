@@ -28,9 +28,9 @@ class Parse{
 
 	public:
 		//parameterized constructor
-		Parse(string userInput);
+		Parse();
 		//parses the string into tokens and adds them to the correct param fields
-		Param * parseString();
+		Param * parseString(char* cmdLn);
 };
 
 #endif

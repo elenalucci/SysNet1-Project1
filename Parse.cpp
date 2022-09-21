@@ -3,19 +3,15 @@
 #include <cstring>
 #include <algorithm>
 //parameterized constructor
-Parse::Parse(string userInput){
-	input = userInput;
+Parse::Parse(){
 }
 
 //function that parses the string into tokens, and adds the tokens into the correct param field, returns param object
-Param * Parse::parseString(){
+Param * Parse::parseString(char* cmdLn){
 	//creates new param object per string	
 	Param * param = new Param();
-		
-	char * cstr = new char[input.length()+1];
-	strcpy(cstr, input.c_str());
 
-	token = strtok(cstr," \t\n");
+	token = strtok(cmdLn," \t\n");
 	//while token is a length bigger than 0, parse	
 	while(token != 0){
 
@@ -32,6 +28,7 @@ Param * Parse::parseString(){
 			
 			strcpy(token, newToken.c_str());
 			param->setInputRedirect(token);
+		
 		}
 		//sets ouput redirect name
 		else if(token[0] == '>'){
@@ -48,7 +45,7 @@ Param * Parse::parseString(){
 			param->setOutputRedirect(token);
 		}
 		
-		else if(token[0] == '&' && input[input.length()-1] == '&') {
+		else if(token[0] == '&') {
 			param->setBackground(1);
 		}
 		//all other tokens are added to argument vector
@@ -57,7 +54,6 @@ Param * Parse::parseString(){
 		}
 		token = strtok(NULL, " \t\n");
 	}
-
 
 	return param;
 }

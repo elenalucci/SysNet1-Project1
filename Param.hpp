@@ -37,6 +37,7 @@ class Param {
 		//adds parsed token to argumentVectpr
 		void addArgument(char* newArgument);
 		//getters and setters
+		int getArgumentCount();
 		char** getArguments();
 		void setInputRedirect(char *newInputRedirect);
 		void setOutputRedirect(char *newOutputRedirect);
