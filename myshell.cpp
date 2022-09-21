@@ -55,7 +55,9 @@ int main(int argsc, char** argsv) {
 	cout << "$$$: ";
 	getline(cin, userInput);
 	
-	int countKids = 0;
+	int kidsCount = 0;
+	pid_t wpid;
+	int status = 0;
 
 	while(userInput != "exit"){
 	
@@ -67,12 +69,7 @@ int main(int argsc, char** argsv) {
 		//part 2
 
 		pid_t pid = fork();
-
-		cout << "incr" << endl;
 		
-		countKids++;
-
-		cout << countKids << endl;
 		if(pid < 0) { 
 			
 			cout << stderr << "Fork failed" << endl;
@@ -81,33 +78,25 @@ int main(int argsc, char** argsv) {
 		}
 
 		else if(pid == 0) {
-
+			kidsCount++;
+			cout << "Kids remaining: " << kidsCount << endl;
+			
 			if(execvp(param->getArguments()[0], param->getArguments()) == -1) {
 			
 				cout << "ERROR: COMMAND NOT RECOGNIZED" << endl;
-
-				cout << "decr 1" << endl;
-				countKids--;
-
 				exit(1);
 			
 			}
-
-		cout << "dec1" << endl;
-		countKids--;
-		cout << countKids << endl;
-
+			kidsCount--;		
+		
 		}
 		
 		if(param->getBackground() == 0) {
 
 			wait(NULL);
-
-			cout << "decr" << endl;
-			countKids--;
-
-			cout << countKids << endl;
+		
 		}
+	cout << "Kids remaining: " << kidsCount << endl;
 
 	cout << endl;
 	cout << "$$$: ";
@@ -115,6 +104,9 @@ int main(int argsc, char** argsv) {
 
 	}
 
+	cout << "Kids remaining: " << kidsCount << endl;
+	
+	while((wpid = wait(&status)) >0);
 	
 	return 0;
 
