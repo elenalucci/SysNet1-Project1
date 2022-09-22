@@ -114,7 +114,7 @@ int main(int argsc, char** argsv) {
 	
 	while((wpid = wait(&status)) >0);
 	
-	//delete param;
+	delete param;
 	
 	return 0;
 

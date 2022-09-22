@@ -9,7 +9,9 @@ using namespace std;
 #define MAXARGS 32
 
 /**
- * This program sets up the string for parsing
+ *
+ * 
+* This program sets up the string for parsing
  *
  * @author Elena Lucci & Tia Sharpe
  * @date September 20, 2022
@@ -34,6 +36,8 @@ class Param {
 	public:
 		//default constructor
 		Param();
+		// deconstructor
+		~Param();
 		//adds parsed token to argumentVectpr
 		void addArgument(char* newArgument);
 		//getters and setters

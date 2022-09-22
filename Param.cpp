@@ -14,7 +14,23 @@ Param :: Param(){
 	argumentCount = 0;
 
 }
-//adds parsed toked to argument vector
+
+Param::~Param(){
+
+	delete inputRedirect;
+	delete outputRedirect;
+
+	for(int i = 0; i < argumentCount; i++) {
+
+		delete argumentVector[i];
+
+	}
+
+	delete[] argumentVector;
+
+}
+
+//adds parsed token to argument vector
 void Param :: addArgument(char* newArgument) {
 	argumentVector[argumentCount] = newArgument;
 	argumentCount++;

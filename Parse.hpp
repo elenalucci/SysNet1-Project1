@@ -23,12 +23,18 @@ class Parse{
 	private:
 		//string input
 		string input;
+		
+		Param * param;
+
+		char * cstr;
+
 		//token object
 		char * token;
 
 	public:
 		//parameterized constructor
 		Parse(string userInput);
+		~Parse();
 		//parses the string into tokens and adds them to the correct param fields
 		Param * parseString();
 };

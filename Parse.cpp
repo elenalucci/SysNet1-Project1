@@ -7,12 +7,22 @@ Parse::Parse(string userInput){
 		input = userInput;
 }
 
+Parse::~Parse() {
+
+	param = NULL;
+	cstr = NULL;
+	token = NULL; 
+	delete token;
+	delete[] cstr;
+	delete param;
+
+}
 //function that parses the string into tokens, and adds the tokens into the correct param field, returns param object
 Param * Parse::parseString(){
 	//creates new param object per string	
-	Param * param = new Param();
+	param = new Param();
 	
-	char * cstr = new char[input.length()+1];
+	cstr = new char[input.length()+1];
 	strcpy(cstr, input.c_str());
 
 
