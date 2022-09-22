@@ -3,15 +3,21 @@
 #include <cstring>
 #include <algorithm>
 //parameterized constructor
-Parse::Parse(){
+Parse::Parse(string userInput){
+		input = userInput;
 }
 
 //function that parses the string into tokens, and adds the tokens into the correct param field, returns param object
-Param * Parse::parseString(char* cmdLn){
+Param * Parse::parseString(){
 	//creates new param object per string	
 	Param * param = new Param();
+	
+	char * cstr = new char[input.length()+1];
+	strcpy(cstr, input.c_str());
 
-	token = strtok(cmdLn," \t\n");
+
+
+	token = strtok(cstr," \t\n");
 	//while token is a length bigger than 0, parse	
 	while(token != 0){
 

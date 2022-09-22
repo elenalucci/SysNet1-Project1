@@ -65,12 +65,9 @@ int main(int argsc, char** argsv) {
 			break;
 
 		}
-
-		char * cstr = new char[userInput.length()+1];
-   	        strcpy(cstr, userInput.c_str());
 		
-		Parse parse;
-		param = parse.parseString(cstr);
+		Parse parse(userInput);
+		param = parse.parseString();
 		
 		//part 2
 
@@ -112,8 +109,6 @@ int main(int argsc, char** argsv) {
 		
 		}
 
-		delete cstr;
-		delete param;
 
 	}
 	
