@@ -20,14 +20,6 @@ Param::~Param(){
 	delete inputRedirect;
 	delete outputRedirect;
 
-	for(int i = 0; i < argumentCount; i++) {
-
-		delete argumentVector[i];
-
-	}
-
-	delete[] argumentVector;
-
 }
 
 //adds parsed token to argument vector

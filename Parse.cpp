@@ -9,10 +9,6 @@ Parse::Parse(string userInput){
 
 Parse::~Parse() {
 
-	param = NULL;
-	cstr = NULL;
-	token = NULL; 
-	delete token;
 	delete[] cstr;
 	delete param;
 
@@ -72,6 +68,7 @@ Param * Parse::parseString(){
 	}
 
 	return param;
+
 }
 
 
